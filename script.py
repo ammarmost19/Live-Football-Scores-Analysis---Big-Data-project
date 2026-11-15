@@ -25,8 +25,8 @@ def send_event(events_path,sorted_df, i):
     while j < len(target_df3):
         print(target_df3.iloc[j])
         j += 1
-        print("################# wait 1 seconds #################")
-        time.sleep(1)
+        print("################# wait 3 seconds #################")
+        time.sleep(3)
 
 
 def send_info(matches_path):
