@@ -21,17 +21,28 @@ def send_teams(teams_path,sorted_df,i):
         print(target_df2.iloc[j])
         j += 1
 
+def send_event(events_path,sorted_df, i):
+    df3 = pd.read_csv(events_path)
+    match_id_val = sorted_df.iloc[i]["match_id"]
+    target_df3 = df3[df3["match_id"] == match_id_val]
+    j = 0
+    while j < len(target_df3):
+        print(target_df3.iloc[j])
+        j += 1
+
+
 
 import pandas as pd
-def send_info(matches_path, teams_path):
+def send_info(matches_path):
     df1 = pd.read_csv(matches_path)
     sorted_df = df1.sort_values(by = "match_id", ascending=True)
     i = 0
     while i <= 0: #when you start real impleamet don't forget to remove the "="
         print(sorted_df.iloc[i])
         send_teams(teams_path,sorted_df,i)
+        send_event(events_path,sorted_df, i)
         i += 1
 
 
 
-send_info(matches_path,teams_path)
+send_info(matches_path)
