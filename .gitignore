@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+.dist/
+checkpoints/
+.venv/
+venv/
+*.sqlite
+*.sqlite-wal
+*.sqlite-shm
+*.db
+*.log
